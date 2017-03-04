@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# choose audio output format
+RESP=`yad \
+--list \
+--title "ytd" \
+--column "choose audio format:" aac vorbis mp3 m4a opus wav \
+--width 1000 \
+--height 600 \
+| sed -u 's#|##g' `
+
+# download video, extract audio, convert in selected format
+/opt/ytd/ytd \
+-i \
+--yes-playlist \
+-x \
+--audio-format $RESP \
+-o "~/ytd/%(title)s.%(ext)s" $@ 2>&1 \
+|  yad \
+--text-info \
+--tail \
+--title "File save to ~/ytd" \
+--no-buttons \
+--width 1000 \
+--height 600
