@@ -6,6 +6,7 @@ RESP=`/opt/ytd/ytd \
 | yad \
 --width 1000 \
 --height 600 \
+--no-buttons \
 --list \
 --title "List avaibility:" \
 --column "Avaibility:"\
