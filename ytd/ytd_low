@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# Download video
+/opt/ytd/ytd  \
+-i \
+--yes-playlist \
+-f worstvideo \
+-o "~/ytd/%(title)s.%(ext)s" $@ 2>&1 \
+|  yad \
+--text-info \
+--tail \
+--title "File save to ~/ytd" \
+--no-buttons \
+--width 1000 \
+--height 600

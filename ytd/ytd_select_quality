@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# choose quality and format
+RESP=`/opt/ytd/ytd \
+-F $@ \
+| yad \
+--width 1000 \
+--height 600 \
+--list \
+--title "List avaibility:" \
+--column "Avaibility:"\
+| awk '{print $1}'`
+
+# Download video
+/opt/ytd/ytd \
+-f $RESP \
+-i \
+--yes-playlist \
+-o "~/ytd/%(title)s.%(ext)s" $@ 2>&1 \
+|  yad \
+--text-info \
+--tail \
+--title "File save to ~/ytd" \
+--no-buttons \
+--width 1000 \
+--height 600

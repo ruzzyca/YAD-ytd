@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# choose format
+RESP=`yad \
+--list \
+--title "ytd" \
+--column "choose video format:"  mp4 flv ogg webm mkv avi \
+--width 1000 \
+--height 600 \
+| sed -u 's#|##g' `
+
+# Download video
+/opt/ytd/ytd \
+--recode-video $RESP \
+-i \
+--yes-playlist \
+-o "~/ytd/%(title)s.%(ext)s" $@ 2>&1 \
+|  yad \
+--text-info \
+--tail \
+--title "File save to ~/ytd" \
+--no-buttons \
+--width 1000 \
+--height 600
