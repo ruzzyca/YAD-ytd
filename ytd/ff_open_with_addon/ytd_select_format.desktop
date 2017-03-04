@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Icon=/opt/ytd/ff_open_with_addon/YouTube.png
+Name=ytd select format
+GenericName=ytd
+Comment=Download youtube video select format
+Exec=/opt/ytd/ytd_select_format
+Terminal=false
+Type=Application
+X-Desktop-File-Install-Version=0.22
+Encoding=UTF-8
+NoDisplay=true
+Name[it_IT]=ytd_select_format.desktop
