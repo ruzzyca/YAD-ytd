@@ -26,6 +26,8 @@ fi
 
 # copy ytd dir to /opt
 cp -r ytd /opt/
+# set permission
+chmod -R 755 /opt/ytd/
 
 # link script to /usr/bin
 ln -s /opt/ytd/ytd /usr/bin/ytd
