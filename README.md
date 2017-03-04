@@ -10,6 +10,9 @@ for latest version run:
 
 ( I chose to rename it to avoid conflicts with original older versions in the repositories of the old distributions that have different options and will not work )
 
+# youtube-dl supported sites
+
+	http://rg3.github.io/youtube-dl/supportedsites.html
 
 #	Dependencies:
 
