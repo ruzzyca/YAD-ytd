@@ -7,6 +7,7 @@ RESP=`yad \
 --column "choose audio format:" aac vorbis mp3 m4a opus wav \
 --width 1000 \
 --height 600 \
+--no-buttons \
 | sed -u 's#|##g' `
 
 # download video, extract audio, convert in selected format
